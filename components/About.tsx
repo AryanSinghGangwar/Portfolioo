@@ -13,7 +13,6 @@ export default function About() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-4 text-white">
-            <span className="w-12 h-1 bg-white rounded-full" />
             About Me
           </h2>
           

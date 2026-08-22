@@ -15,9 +15,7 @@ export default function Contact() {
           className="text-center"
         >
           <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-4 text-white">
-            <span className="w-12 h-1 bg-white rounded-full" />
             Get In Touch
-            <span className="w-12 h-1 bg-white rounded-full" />
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto mb-12">
             Whether you have a question, a project idea, or just want to say hi, I'll try my best to get back to you!
