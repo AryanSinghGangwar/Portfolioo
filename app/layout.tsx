@@ -21,9 +21,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-black text-slate-300 selection:bg-slate-300/30 selection:text-slate-100">{children}</body>
+      <body className="min-h-full flex flex-col bg-black text-slate-300 selection:bg-slate-300/30 selection:text-slate-100 relative">
+        <div 
+          className="fixed inset-0 z-[-1] opacity-20 pointer-events-none" 
+          style={{ backgroundImage: `url('/grid.svg')`, backgroundSize: '40px 40px' }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
