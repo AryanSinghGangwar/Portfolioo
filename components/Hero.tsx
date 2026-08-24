@@ -32,7 +32,7 @@ export default function Hero() {
             architecture and AI integration.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-12">
             <a
               href="#projects"
               className="flex items-center gap-2 px-8 py-3 bg-white hover:bg-slate-200 text-black font-semibold rounded-full transition-colors"
@@ -41,8 +41,16 @@ export default function Hero() {
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="#contact"
+              href="/resume.pdf"
+              target="_blank"
               className="flex items-center gap-2 px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-full transition-colors border border-slate-700"
+            >
+              <Download className="w-5 h-5" />
+              Download Resume
+            </a>
+            <a
+              href="#contact"
+              className="flex items-center gap-2 px-8 py-3 bg-transparent hover:bg-slate-800/50 text-slate-300 font-semibold rounded-full transition-colors"
             >
               Contact Me
             </a>
