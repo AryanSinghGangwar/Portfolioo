@@ -11,6 +11,7 @@ const projects = [
     description: "Engineered a custom Object-Relational Mapping engine in C++ with a layered architecture. Built a dynamic query builder supporting method chaining for type-safe data retrieval and implemented efficient DB-to-object mapping.",
     tech: ["C++", "SQLite", "STL", "System Design"],
     github: "https://github.com/AryanSinghGangwar/ORM",
+    live: "https://orm-use.vercel.app/",
   },
   {
     title: "DocChat AI",

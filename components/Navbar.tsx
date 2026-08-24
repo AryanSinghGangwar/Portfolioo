@@ -1,11 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: "About", href: "#about" },
@@ -34,9 +46,9 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button 
           className="md:hidden text-slate-300 z-50"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(true)}
         >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <Menu className="w-6 h-6" />
         </button>
       </div>
 
@@ -47,18 +59,25 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-b border-slate-800/50 flex flex-col items-center py-6 gap-6 md:hidden shadow-2xl"
+            className="fixed inset-0 h-[100dvh] w-full bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden z-50"
           >
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
                 onClick={() => setIsOpen(false)}
-                className="text-lg font-medium text-slate-300 hover:text-white transition-colors"
+                className="text-3xl font-medium text-slate-300 hover:text-white transition-colors"
               >
                 {link.name}
               </a>
             ))}
+            
+            <button
+              onClick={() => setIsOpen(false)}
+              className="mt-12 text-slate-400 hover:text-white transition-colors p-4 bg-slate-800/50 rounded-full"
+            >
+              <X className="w-8 h-8" />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
