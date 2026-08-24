@@ -20,7 +20,7 @@ export default function Home() {
       <Contact />
       
       <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-800/50">
-        <p>© {new Date().getFullYear()} Aryan Singh. Built with Next.js & Tailwind CSS.</p>
+        <p>© {new Date().getFullYear()} Aryan Singh.</p>
       </footer>
     </main>
   );
